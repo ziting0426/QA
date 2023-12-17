@@ -8,7 +8,7 @@ const port = 3000;
 app.set('view engine', 'ejs');
 
 // Connect to MongoDB (replace with your own MongoDB connection string)
-mongoose.connect('mongodb://localhost/question-and-answer', {
+mongoose.connect('mongodb://127.0.0.1/question-and-answer', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })

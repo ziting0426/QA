@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  header {
+    background-color: #ffd700;
+    padding: 10px;
+    display: flex;
+  }
+  header h1{
+    padding-top: 50px;
+    padding-left: 50px;
+  }
+  
+  #ask-form,
+  #questions {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 12px;
+  }
+  
+  button {
+    background-color: #ffd700;
+    color: #333;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  /* 媒體查詢 - 響應式調整 */
+
+@media only screen and (max-width: 600px) {
+    header {
+      flex-direction: column; /* 在小螢幕上將 header 的排列方向改為垂直 */
+      text-align: center;
+    }
+  
+    header h1 {
+      padding-left: 0; /* 移除左邊距 */
+    }
+  
+    #ask-form,
+    #questions {
+      padding: 10px; /* 減小卡片的內邊距 */
+    }
+  
+    button {
+      width: 100%; /* 讓按鈕寬度滿佈容器 */
+    }
+  
+    .question {
+      padding: 10px; /* 減小問題和答案卡片的內邊距 */
+    }
+  }

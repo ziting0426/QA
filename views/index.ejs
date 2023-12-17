@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q&A Platform</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header style="background-color: #ffd700; padding: 10px;">
+    <img src="/images/beerphoto.jpg" alt="beerphoto" style="width: 10%; height: auto;">
+    <h1>梓庭愛喝酒</h1>
+  </header>
+
+  <div id="ask-form" style="margin: 20px;">
+    <h2>Ask a Question</h2>
+    <form action="/ask" method="post">
+      <label for="studentName">Your Name:</label>
+      <input type="text" id="studentName" name="studentName" required>
+      <br>
+      <label for="questionText">Your Question:</label>
+      <textarea id="questionText" name="questionText" required></textarea>
+      <br>
+      <button type="submit">Ask</button>
+    </form>
+  </div>
+
+  <div id="questions" style="margin: 20px;">
+    <h2>Questions and Answers</h2>
+    <% questions.forEach(question => { %>
+      <div class="question">
+        <p><strong><%= question.studentName %></strong> asks:</p>
+        <p><%= question.questionText %></p>
+        <% if (question.teacherAnswer) { %>
+          <p><strong>Answer:</strong> <%= question.teacherAnswer %></p>
+        <% } else { %>
+          <form action="/answer/<%= question._id %>" method="post">
+            <label for="teacherAnswer">Your Answer:</label>
+            <textarea id="teacherAnswer" name="teacherAnswer" required></textarea>
+            <br>
+            <button type="submit">Answer</button>
+          </form>
+        <% } %>
+      </div>
+    <% }); %>
+  </div>
+</body>
+</html>

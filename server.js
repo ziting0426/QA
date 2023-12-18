@@ -3,12 +3,12 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const app = express();
-const port = 3000;
+const appPort = 3000; // 將應用程式伺服器的埠號修改為 3000
 
 app.set('view engine', 'ejs');
 
 // Connect to MongoDB (replace with your own MongoDB connection string)
-mongoose.connect('mongodb://127.0.0.1/question-and-answer', {
+mongoose.connect('mongodb://127.0.0.1:27017/question-and-answer', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
@@ -47,7 +47,6 @@ app.post('/answer/:id', async (req, res) => {
   res.redirect('/');
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+app.listen(appPort, () => {
+  console.log(`Server is running on http://127.0.0.1:${appPort}`);
 });
-

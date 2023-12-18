@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const app = express();
-const appPort = 3000; // 將應用程式伺服器的埠號修改為 3000
+const appPort = 27017; // 將應用程式伺服器的埠號修改為 3000
 
 app.set('view engine', 'ejs');
 
